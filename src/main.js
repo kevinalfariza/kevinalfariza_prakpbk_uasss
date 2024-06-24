@@ -1,19 +1,12 @@
-// FILE: main.js
-
-import { createApp } from 'vue'
-import { Quasar } from 'quasar'
-
-import '@quasar/extras/material-icons/material-icons.css'
-
-import 'quasar/src/css/index.sass'
-
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import { Quasar } from 'quasar';
+import quasarUserOptions from './quasar-user-options';
 import router from './router';
 
-const myApp = createApp(App)
+const app = createApp(App);
 
-myApp.use(Quasar, {
-  plugins: {}, 
-})
+app.use(Quasar, quasarUserOptions);
+app.use(router);
 
-myApp.mount('#app')
+app.mount('#app');
